@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B67456729F572AD00179289 /* FindFalconeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67456629F572AD00179289 /* FindFalconeApp.swift */; };
+		7B67456929F572AD00179289 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67456829F572AD00179289 /* ContentView.swift */; };
+		7B67456B29F572B000179289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B67456A29F572B000179289 /* Assets.xcassets */; };
+		7B67456E29F572B000179289 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B67456D29F572B000179289 /* Preview Assets.xcassets */; };
+		7B67457829F572B000179289 /* FindFalconeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67457729F572B000179289 /* FindFalconeTests.swift */; };
+		7B67458229F572B000179289 /* FindFalconeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67458129F572B000179289 /* FindFalconeUITests.swift */; };
+		7B67458429F572B000179289 /* FindFalconeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67458329F572B000179289 /* FindFalconeUITestsLaunchTests.swift */; };
+		7B67459329F5735800179289 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459129F5735800179289 /* Velocity.swift */; };
+		7B67459429F5735800179289 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459229F5735800179289 /* Planets.swift */; };
+		7B67459729F5738900179289 /* ViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459629F5738900179289 /* ViewModelClass.swift */; };
+		7B67459A29F573B200179289 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459929F573B200179289 /* Service.swift */; };
+		7B67459D29F573EC00179289 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459C29F573EC00179289 /* HTTPUtility.swift */; };
+		7B6745A029F5742C00179289 /* RadioButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459F29F5742C00179289 /* RadioButtons.swift */; };
+		7B6745A229F5744300179289 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745A129F5744300179289 /* ResultView.swift */; };
+		7B6745AA29F5782C00179289 /* VewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745A829F5778C00179289 /* VewModelTest.swift */; };
+		7B6745AC29F5C35E00179289 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745AB29F5C35E00179289 /* APITest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B67457429F572B000179289 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B67455B29F572AD00179289 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B67456229F572AD00179289;
+			remoteInfo = FindFalcone;
+		};
+		7B67457E29F572B000179289 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B67455B29F572AD00179289 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B67456229F572AD00179289;
+			remoteInfo = FindFalcone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B67456329F572AD00179289 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B67456629F572AD00179289 /* FindFalconeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeApp.swift; sourceTree = "<group>"; };
+		7B67456829F572AD00179289 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B67456A29F572B000179289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B67456D29F572B000179289 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7B67457329F572B000179289 /* FindFalconeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindFalconeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B67457729F572B000179289 /* FindFalconeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeTests.swift; sourceTree = "<group>"; };
+		7B67457D29F572B000179289 /* FindFalconeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindFalconeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B67458129F572B000179289 /* FindFalconeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeUITests.swift; sourceTree = "<group>"; };
+		7B67458329F572B000179289 /* FindFalconeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B67459129F5735800179289 /* Velocity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
+		7B67459229F5735800179289 /* Planets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		7B67459629F5738900179289 /* ViewModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelClass.swift; sourceTree = "<group>"; };
+		7B67459929F573B200179289 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		7B67459C29F573EC00179289 /* HTTPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
+		7B67459F29F5742C00179289 /* RadioButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtons.swift; sourceTree = "<group>"; };
+		7B6745A129F5744300179289 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		7B6745A829F5778C00179289 /* VewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VewModelTest.swift; sourceTree = "<group>"; };
+		7B6745AB29F5C35E00179289 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B67456029F572AD00179289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67457029F572B000179289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67457A29F572B000179289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B67455A29F572AD00179289 = {
+			isa = PBXGroup;
+			children = (
+				7B67456529F572AD00179289 /* FindFalcone */,
+				7B67457629F572B000179289 /* FindFalconeTests */,
+				7B67458029F572B000179289 /* FindFalconeUITests */,
+				7B67456429F572AD00179289 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B67456429F572AD00179289 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B67456329F572AD00179289 /* FindFalcone.app */,
+				7B67457329F572B000179289 /* FindFalconeTests.xctest */,
+				7B67457D29F572B000179289 /* FindFalconeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B67456529F572AD00179289 /* FindFalcone */ = {
+			isa = PBXGroup;
+			children = (
+				7B67459E29F5741100179289 /* Screens */,
+				7B67459B29F573CD00179289 /* NetworkUtility */,
+				7B67459829F5739800179289 /* Service */,
+				7B67459529F5737300179289 /* MVVM */,
+				7B67459029F5731100179289 /* Models */,
+				7B67456629F572AD00179289 /* FindFalconeApp.swift */,
+				7B67456829F572AD00179289 /* ContentView.swift */,
+				7B67456A29F572B000179289 /* Assets.xcassets */,
+				7B67456C29F572B000179289 /* Preview Content */,
+			);
+			path = FindFalcone;
+			sourceTree = "<group>";
+		};
+		7B67456C29F572B000179289 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7B67456D29F572B000179289 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B67457629F572B000179289 /* FindFalconeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B6745AB29F5C35E00179289 /* APITest.swift */,
+				7B6745A829F5778C00179289 /* VewModelTest.swift */,
+				7B67457729F572B000179289 /* FindFalconeTests.swift */,
+			);
+			path = FindFalconeTests;
+			sourceTree = "<group>";
+		};
+		7B67458029F572B000179289 /* FindFalconeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B67458129F572B000179289 /* FindFalconeUITests.swift */,
+				7B67458329F572B000179289 /* FindFalconeUITestsLaunchTests.swift */,
+			);
+			path = FindFalconeUITests;
+			sourceTree = "<group>";
+		};
+		7B67459029F5731100179289 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B67459229F5735800179289 /* Planets.swift */,
+				7B67459129F5735800179289 /* Velocity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7B67459529F5737300179289 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				7B67459629F5738900179289 /* ViewModelClass.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		7B67459829F5739800179289 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7B67459929F573B200179289 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7B67459B29F573CD00179289 /* NetworkUtility */ = {
+			isa = PBXGroup;
+			children = (
+				7B67459C29F573EC00179289 /* HTTPUtility.swift */,
+			);
+			path = NetworkUtility;
+			sourceTree = "<group>";
+		};
+		7B67459E29F5741100179289 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7B6745A129F5744300179289 /* ResultView.swift */,
+				7B67459F29F5742C00179289 /* RadioButtons.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B67456229F572AD00179289 /* FindFalcone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B67458729F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalcone" */;
+			buildPhases = (
+				7B67455F29F572AD00179289 /* Sources */,
+				7B67456029F572AD00179289 /* Frameworks */,
+				7B67456129F572AD00179289 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindFalcone;
+			productName = FindFalcone;
+			productReference = 7B67456329F572AD00179289 /* FindFalcone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B67457229F572B000179289 /* FindFalconeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B67458A29F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalconeTests" */;
+			buildPhases = (
+				7B67456F29F572B000179289 /* Sources */,
+				7B67457029F572B000179289 /* Frameworks */,
+				7B67457129F572B000179289 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B67457529F572B000179289 /* PBXTargetDependency */,
+			);
+			name = FindFalconeTests;
+			productName = FindFalconeTests;
+			productReference = 7B67457329F572B000179289 /* FindFalconeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B67457C29F572B000179289 /* FindFalconeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B67458D29F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalconeUITests" */;
+			buildPhases = (
+				7B67457929F572B000179289 /* Sources */,
+				7B67457A29F572B000179289 /* Frameworks */,
+				7B67457B29F572B000179289 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B67457F29F572B000179289 /* PBXTargetDependency */,
+			);
+			name = FindFalconeUITests;
+			productName = FindFalconeUITests;
+			productReference = 7B67457D29F572B000179289 /* FindFalconeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B67455B29F572AD00179289 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7B67456229F572AD00179289 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					7B67457229F572B000179289 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7B67456229F572AD00179289;
+					};
+					7B67457C29F572B000179289 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 7B67456229F572AD00179289;
+					};
+				};
+			};
+			buildConfigurationList = 7B67455E29F572AD00179289 /* Build configuration list for PBXProject "FindFalcone" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B67455A29F572AD00179289;
+			productRefGroup = 7B67456429F572AD00179289 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B67456229F572AD00179289 /* FindFalcone */,
+				7B67457229F572B000179289 /* FindFalconeTests */,
+				7B67457C29F572B000179289 /* FindFalconeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B67456129F572AD00179289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B67456E29F572B000179289 /* Preview Assets.xcassets in Resources */,
+				7B67456B29F572B000179289 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67457129F572B000179289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67457B29F572B000179289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B67455F29F572AD00179289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B67456929F572AD00179289 /* ContentView.swift in Sources */,
+				7B67456729F572AD00179289 /* FindFalconeApp.swift in Sources */,
+				7B6745A229F5744300179289 /* ResultView.swift in Sources */,
+				7B67459329F5735800179289 /* Velocity.swift in Sources */,
+				7B6745A029F5742C00179289 /* RadioButtons.swift in Sources */,
+				7B67459D29F573EC00179289 /* HTTPUtility.swift in Sources */,
+				7B67459729F5738900179289 /* ViewModelClass.swift in Sources */,
+				7B67459429F5735800179289 /* Planets.swift in Sources */,
+				7B67459A29F573B200179289 /* Service.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67456F29F572B000179289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B6745AA29F5782C00179289 /* VewModelTest.swift in Sources */,
+				7B67457829F572B000179289 /* FindFalconeTests.swift in Sources */,
+				7B6745AC29F5C35E00179289 /* APITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B67457929F572B000179289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B67458429F572B000179289 /* FindFalconeUITestsLaunchTests.swift in Sources */,
+				7B67458229F572B000179289 /* FindFalconeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B67457529F572B000179289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B67456229F572AD00179289 /* FindFalcone */;
+			targetProxy = 7B67457429F572B000179289 /* PBXContainerItemProxy */;
+		};
+		7B67457F29F572B000179289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B67456229F572AD00179289 /* FindFalcone */;
+			targetProxy = 7B67457E29F572B000179289 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7B67458529F572B000179289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7B67458629F572B000179289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B67458829F572B000179289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindFalcone/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalcone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7B67458929F572B000179289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FindFalcone/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalcone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7B67458B29F572B000179289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalconeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindFalcone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindFalcone";
+			};
+			name = Debug;
+		};
+		7B67458C29F572B000179289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalconeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindFalcone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindFalcone";
+			};
+			name = Release;
+		};
+		7B67458E29F572B000179289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalconeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindFalcone;
+			};
+			name = Debug;
+		};
+		7B67458F29F572B000179289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emarah.News.FindFalconeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FindFalcone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B67455E29F572AD00179289 /* Build configuration list for PBXProject "FindFalcone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B67458529F572B000179289 /* Debug */,
+				7B67458629F572B000179289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B67458729F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalcone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B67458829F572B000179289 /* Debug */,
+				7B67458929F572B000179289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B67458A29F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalconeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B67458B29F572B000179289 /* Debug */,
+				7B67458C29F572B000179289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B67458D29F572B000179289 /* Build configuration list for PBXNativeTarget "FindFalconeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B67458E29F572B000179289 /* Debug */,
+				7B67458F29F572B000179289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B67455B29F572AD00179289 /* Project object */;
+}
