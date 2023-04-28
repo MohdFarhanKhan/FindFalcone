@@ -26,10 +26,10 @@ final class VewModelTest: XCTestCase {
         let selectedPlanet = Planet(name:"Donlon",distance:100)
         let selectedVehicle = Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2)
         viewModelObject?.selectPlanet(planet: selectedPlanet, sectionNo: sectionNo)
-        XCTAssert(viewModelObject?.selectedPlanet1 == selectedPlanet, "selectedPlanet is not equal to viewModelObject.selectedPlanet")
+        XCTAssert(viewModelObject?.planetVehicleArray[sectionNo-1].planet == selectedPlanet, "selectedPlanet is not equal to viewModelObject.selectedPlanet")
         
     }
-    //viewModelObject
+   
     //didChangeIn(vel:Velocity, oldVel:Velocity?, sectionNo:Int)->Void{
     func testDidChangeIn() throws{
         let sectionNo = 1
@@ -38,7 +38,7 @@ final class VewModelTest: XCTestCase {
         viewModelObject?.selectPlanet(planet: selectedPlanet, sectionNo: sectionNo)
         
        viewModelObject?.didChangeIn(vel: selectedVehicle, oldVel: nil, sectionNo: sectionNo)
-        XCTAssert(viewModelObject?.selectedVelocity1 == selectedVehicle, "selectedVehicle is not equal to viewModelObject.selectedVehicle")
+        XCTAssert(viewModelObject?.planetVehicleArray[sectionNo-1].vehicle == selectedVehicle, "selectedVehicle is not equal to viewModelObject.selectedVehicle")
         
     }
     //getVehicleNameValue
@@ -46,7 +46,9 @@ final class VewModelTest: XCTestCase {
         let sectionNo = 1
         let selectedPlanet = Planet(name:"Donlon",distance:100)
         let selectedVehicle = Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2)
-        viewModelObject?.setVehicleNameValue(sectionNo: sectionNo, value: selectedVehicle.name)
+        viewModelObject?.selectPlanet(planet: selectedPlanet, sectionNo: sectionNo)
+        
+       viewModelObject?.didChangeIn(vel: selectedVehicle, oldVel: nil, sectionNo: sectionNo)
        
         XCTAssert(viewModelObject?.getVehicleNameValue(sectionNo: sectionNo) == selectedVehicle.name, "selectedVehicle.name is not equal to viewModelObject.getVehicleNameValue(sectionNo: 1)")
         
@@ -55,27 +57,23 @@ final class VewModelTest: XCTestCase {
     func testGetOldVehicleNameValue() throws{
         let sectionNo = 1
         let oldVehicle = Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2)
-        viewModelObject?.setOldVehicleNameValue(sectionNo: sectionNo, value: oldVehicle.name)
+       
+        let selectedPlanet = Planet(name:"Donlon",distance:100)
+        let selectedVehicle = Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4)
+        viewModelObject?.selectPlanet(planet: selectedPlanet, sectionNo: sectionNo)
+        
+       viewModelObject?.didChangeIn(vel: oldVehicle, oldVel: nil, sectionNo: sectionNo)
+        viewModelObject?.didChangeIn(vel: selectedVehicle, oldVel: nil, sectionNo: sectionNo)
+       
         XCTAssert(viewModelObject?.getOldVehicleNameValue(sectionNo: sectionNo) == oldVehicle.name, "oldVehicle.name is not equal to viewModelObject.getOldVehicleNameValue(sectionNo: 1)")
         
     }
-    //setVehicleNameValue(sectionNo: Int, value:String)
-    func testSetVehicleNameValue() throws{
-        let sectionNo = 1
-        let selectedVehicle = Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2)
-        viewModelObject?.setVehicleNameValue(sectionNo: sectionNo, value: selectedVehicle.name)
-        XCTAssert(viewModelObject?.getVehicleNameValue(sectionNo: sectionNo) == selectedVehicle.name, "oldVehicle.name is not equal to viewModelObject.getOldVehicleNameValue(sectionNo: 1)")
-        
-    }
-    
-    //setOldVehicleNameValue(sectionNo: Int, value:String)
-    
-    func testSetOldVehicleNameValue() throws{
-        let sectionNo = 1
-        let oldVehicle = Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2)
-        viewModelObject?.setOldVehicleNameValue(sectionNo: sectionNo, value: oldVehicle.name)
-        XCTAssert(viewModelObject?.getOldVehicleNameValue(sectionNo: sectionNo) == oldVehicle.name, "oldVehicle.name is not equal to viewModelObject.getOldVehicleNameValue(sectionNo: 1)")
-        
+    //getDataFromAPI
+    func testGetDataFromAPI() async throws {
+        await viewModelObject?.getDataFromAPI()
+        XCTAssertNotNil(self.viewModelObject?.authToken?.token)
+        XCTAssertNotNil(viewModelObject?.planets)
+        XCTAssertNotNil(viewModelObject?.velocities)
     }
    
     func testPerformanceExample() throws {
@@ -85,11 +83,11 @@ final class VewModelTest: XCTestCase {
         }
     }
     func mockValues(){
-        viewModelObject!.velocities1 = [Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2),Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4),Velocity(name:"Space shuttle",total_no:1,max_distance:400,speed:5),Velocity(name:"Space ship",total_no:2,max_distance:600,speed:10)]
-        viewModelObject!.velocities2 = [Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2),Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4),Velocity(name:"Space shuttle",total_no:1,max_distance:400,speed:5),Velocity(name:"Space ship",total_no:2,max_distance:600,speed:10)]
-        viewModelObject!.velocities3 = [Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2),Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4),Velocity(name:"Space shuttle",total_no:1,max_distance:400,speed:5),Velocity(name:"Space ship",total_no:2,max_distance:600,speed:10)]
-        viewModelObject!.velocities4 = [Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2),Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4),Velocity(name:"Space shuttle",total_no:1,max_distance:400,speed:5),Velocity(name:"Space ship",total_no:2,max_distance:600,speed:10)]
+        viewModelObject!.velocities = [Velocity(name:"Space pod",total_no:2,max_distance:200,speed:2),Velocity(name:"Space rocket",total_no:1,max_distance:300,speed:4),Velocity(name:"Space shuttle",total_no:1,max_distance:400,speed:5),Velocity(name:"Space ship",total_no:2,max_distance:600,speed:10)]
+       
         viewModelObject!.planets = [Planet(name:"Donlon",distance:100),Planet(name:"Enchai",distance:200),Planet(name:"Jebing",distance:300),Planet(name:"Sapir",distance:400),Planet(name:"Lerbin",distance:500),Planet(name:"Pingasor",distance:600)]
+        viewModelObject?.initPlanetVehicle()
+       
     }
 
 }
