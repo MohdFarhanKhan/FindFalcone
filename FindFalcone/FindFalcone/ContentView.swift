@@ -6,162 +6,45 @@
 //
 
 import SwiftUI
-struct Section1View: View {
+
+struct SectionView: View {
     @ObservedObject var velocitieClass:ViewModelClass = ViewModelClass()
+    @State var sectionNo = 0
     @State var planet: Planet?
     
     var body: some View {
         VStack{
             
-            Menu(velocitieClass.buttonTitle1) {
+            Menu(velocitieClass.getButtonTitle(sectionNo: sectionNo)) {
                 ForEach(velocitieClass.planets, id: \.name) { planet in
                     
                     Button(planet.name) {
                       
-                        velocitieClass.changeButtonTitle(title: planet.name, sectionNo: 1)
+                        velocitieClass.changeButtonTitle(title: planet.name, sectionNo: sectionNo)
                        
                         self.planet = planet
-                        velocitieClass.selectPlanet(planet: planet, sectionNo: 1)
+                        velocitieClass.selectPlanet(planet: planet, sectionNo: sectionNo)
                      
-                        velocitieClass.setVehicleNameValue(sectionNo: 1, value: "")
-                        velocitieClass.setOldVehicleNameValue(sectionNo: 1, value: "")
-                    }
+                 }
                     }
                         
                     }
             .buttonStyle(.bordered)
             .foregroundColor(.black)
-            RadioButtonView(velClass: self.velocitieClass,planetDistance: planet?.distance ?? 0 ,velocities: $velocitieClass.velocities1,sectionNo: 1)
-                .opacity(!velocitieClass.isVelocityOptionShow1 ? 0 : 1)
-                
-           
-           
+            RadioButtonView(velClass: self.velocitieClass,planetDistance: planet?.distance ?? 0 ,velocities: $velocitieClass.velocities,sectionNo: sectionNo)
+                .opacity(!velocitieClass.getVehicleShowOption(sectionNo: sectionNo) ? 0 : 1)
+      
             
         }
         .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray, lineWidth: 2)
                 )
-        
-       
-       
+     
     }
     
 }
-struct Section2View: View {
-    @ObservedObject var velocitieClass:ViewModelClass = ViewModelClass()
-    @State var planet: Planet?
-    
-    var body: some View {
-        VStack{
-            
-            Menu(velocitieClass.buttonTitle2) {
-                ForEach(velocitieClass.planets, id: \.name) { planet in
-                    
-                    Button(planet.name) {
-                       
-                        velocitieClass.changeButtonTitle(title: planet.name, sectionNo: 2)
-                       
-                        self.planet = planet
-                        velocitieClass.selectPlanet(planet: planet, sectionNo: 2)
-                        velocitieClass.setVehicleNameValue(sectionNo: 2, value: "")
-                        velocitieClass.setOldVehicleNameValue(sectionNo: 2, value: "")
-                       
-                    }
-                    }
-                        
-                    }
-            .buttonStyle(.bordered)
-            .foregroundColor(.black)
-            RadioButtonView(velClass: self.velocitieClass,planetDistance: planet?.distance ?? 0 ,velocities: $velocitieClass.velocities1,sectionNo: 2)
-                .opacity(!velocitieClass.isVelocityOptionShow2 ? 0 : 1)
-           
-           
-            
-        }
-        .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
-       
-    }
-}
-struct Section3View: View {
-    @ObservedObject var velocitieClass:ViewModelClass = ViewModelClass()
-    @State var planet: Planet?
-    
-    var body: some View {
-        VStack{
-            
-            Menu(velocitieClass.buttonTitle3) {
-                ForEach(velocitieClass.planets, id: \.name) { planet in
-                    
-                    Button(planet.name) {
-                      
-                        velocitieClass.changeButtonTitle(title: planet.name, sectionNo: 3)
-                       
-                        self.planet = planet
-                        velocitieClass.selectPlanet(planet: planet, sectionNo: 3)
-                        velocitieClass.setVehicleNameValue(sectionNo: 3, value: "")
-                        velocitieClass.setOldVehicleNameValue(sectionNo: 3, value: "")
-                       
-                    }
-                    }
-                        
-                    }
-            .buttonStyle(.bordered)
-            .foregroundColor(.black)
-            RadioButtonView(velClass: self.velocitieClass,planetDistance: planet?.distance ?? 0 ,velocities: $velocitieClass.velocities1,sectionNo: 3)
-                .opacity(!velocitieClass.isVelocityOptionShow3 ? 0 : 1)
-           
-           
-            
-        }
-        .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
-    }
-}
-struct Section4View: View {
-    @ObservedObject var velocitieClass:ViewModelClass = ViewModelClass()
-    @State var planet: Planet?
-    
-    var body: some View {
-        VStack(spacing:10){
-            
-            Menu(velocitieClass.buttonTitle4) {
-                ForEach(velocitieClass.planets, id: \.name) { planet in
-                    
-                    Button(planet.name) {
-                       
-                        velocitieClass.changeButtonTitle(title: planet.name, sectionNo: 4)
-                       
-                        self.planet = planet
-                        velocitieClass.selectPlanet(planet: planet, sectionNo: 4)
-                        velocitieClass.setVehicleNameValue(sectionNo: 4, value: "")
-                        velocitieClass.setOldVehicleNameValue(sectionNo: 4, value: "")
-                       
-                        
-                    }
-                    .foregroundColor(.black)
-                    
-                    }
-                        
-                    }
-            .buttonStyle(.bordered)
-            .foregroundColor(.black)
-            RadioButtonView(velClass: self.velocitieClass,planetDistance: planet?.distance ?? 0 ,velocities: $velocitieClass.velocities1,sectionNo: 4)
-                .opacity(!velocitieClass.isVelocityOptionShow4 ? 0 : 1)
-            Spacer()
-        }
-        .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
-        
-    }
-}
+
 struct StatusView: View {
     @ObservedObject var velocitieClass:ViewModelClass = ViewModelClass()
     @State var pushed: Bool = false
@@ -176,6 +59,7 @@ struct StatusView: View {
                 Spacer()
                 HStack{
                     Button("FIND FALCONE") {
+                       
                         Task{
                             do {
                                 await velocitieClass.findFalcone()
@@ -204,8 +88,7 @@ struct StatusView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.gray, lineWidth: 2)
                     )
-            
-        
+   
     }
 }
 struct ContentView: View {
@@ -217,6 +100,7 @@ struct ContentView: View {
     @State var isLoading = false
     
     var body: some View {
+        
         NavigationView{
             ZStack{
                 AngularGradient(gradient: grediant , center: .center)
@@ -230,30 +114,27 @@ struct ContentView: View {
                         .foregroundColor(.black)
                         .font(.largeTitle)
                    
-                    if !velocitieClass.velocities1.isEmpty{
+                    if !velocitieClass.velocities.isEmpty{
                         Text("Select the planets you want to search in")
                             .foregroundColor(.black)
                             .font(.title2)
                             .padding(.vertical)
                         
                         ScrollView(.horizontal){
-                            HStack(spacing:5){
-                                Section1View(velocitieClass: velocitieClass)
-                                    .frame(width: 150)
-                                
-                                    .padding()
-                                Section2View(velocitieClass: velocitieClass)
-                                    .frame(width: 150)
-                                    .padding()
+                            ForEach((1...velocitieClass.totalSection), id: \.self) { indx in
+                                if indx % 2 != 0{
+                                    HStack(spacing:5){
+                                        SectionView(velocitieClass: velocitieClass, sectionNo: indx)
+                                            .frame(width: 160)
+                                        
+                                            .padding()
+                                        SectionView(velocitieClass: velocitieClass, sectionNo: indx+1)
+                                            .frame(width: 150)
+                                            .padding()
+                                    }
+                                }
                             }
-                            HStack(spacing:5){
-                                Section3View(velocitieClass: velocitieClass)
-                                    .frame(width: 150)
-                                    .padding()
-                                Section4View(velocitieClass: velocitieClass)
-                                    .frame(width: 150)
-                                    .padding()
-                            }
+                           
                         }
                         .frame(height: 350)
                         
@@ -264,6 +145,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     else{
+                       
                         Circle()
                             .trim(from: 0, to:0.37)
                             .stroke(Color.red, lineWidth:15)
@@ -283,6 +165,7 @@ struct ContentView: View {
                     
                 }
                 .onAppear(){
+                    velocitieClass.initPlanetVehicle()
                     Task{
                         do {
                             isLoading = true

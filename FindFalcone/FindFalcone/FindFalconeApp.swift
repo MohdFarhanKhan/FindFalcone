@@ -12,6 +12,7 @@ struct FindFalconeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ViewModelClass())
         }
     }
 }

@@ -30,6 +30,14 @@ class Velocity:Codable,Equatable{
 struct AuthToken : Decodable {
     let token: String
 }
+class PlanetVehicleSection{
+    var planet:Planet?
+    var vehicle:Velocity?
+    var oldPlanet:Planet?
+    var oldVehicle:Velocity?
+    var buttonTitle = "Select planet"
+    var isVehicleShowOption = false
+}
 
 
 

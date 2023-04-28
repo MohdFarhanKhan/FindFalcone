@@ -21,8 +21,8 @@
 		7B67459D29F573EC00179289 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459C29F573EC00179289 /* HTTPUtility.swift */; };
 		7B6745A029F5742C00179289 /* RadioButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67459F29F5742C00179289 /* RadioButtons.swift */; };
 		7B6745A229F5744300179289 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745A129F5744300179289 /* ResultView.swift */; };
-		7B6745AA29F5782C00179289 /* VewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745A829F5778C00179289 /* VewModelTest.swift */; };
 		7B6745AC29F5C35E00179289 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6745AB29F5C35E00179289 /* APITest.swift */; };
+		7BCE10CD29F94229004EFEA5 /* VewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE10CC29F94229004EFEA5 /* VewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,8 @@
 		7B67459C29F573EC00179289 /* HTTPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
 		7B67459F29F5742C00179289 /* RadioButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtons.swift; sourceTree = "<group>"; };
 		7B6745A129F5744300179289 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		7B6745A829F5778C00179289 /* VewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VewModelTest.swift; sourceTree = "<group>"; };
 		7B6745AB29F5C35E00179289 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+		7BCE10CC29F94229004EFEA5 /* VewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,8 @@
 		7B67457629F572B000179289 /* FindFalconeTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BCE10CC29F94229004EFEA5 /* VewModelTest.swift */,
 				7B6745AB29F5C35E00179289 /* APITest.swift */,
-				7B6745A829F5778C00179289 /* VewModelTest.swift */,
 				7B67457729F572B000179289 /* FindFalconeTests.swift */,
 			);
 			path = FindFalconeTests;
@@ -340,8 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6745AA29F5782C00179289 /* VewModelTest.swift in Sources */,
 				7B67457829F572B000179289 /* FindFalconeTests.swift in Sources */,
+				7BCE10CD29F94229004EFEA5 /* VewModelTest.swift in Sources */,
 				7B6745AC29F5C35E00179289 /* APITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

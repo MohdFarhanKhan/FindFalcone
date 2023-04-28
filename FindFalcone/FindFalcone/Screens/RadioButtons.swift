@@ -59,6 +59,7 @@ struct RadioButtonField: View {
         
     }
 }
+
 struct RadioButtonView: View {
     @State var  velClass: ViewModelClass
     @State var planetDistance = 0
@@ -69,169 +70,52 @@ struct RadioButtonView: View {
         
         let bool1 = velClass.getVehicleNameValue(sectionNo: sectionNo) != vel.name && vel.total_no <= 0
         var bool2 = false
-        if sectionNo == 1{
-            if let planet = velClass.selectedPlanet1 {
-                bool2 = vel.max_distance < planet.distance
-            }
+        if let planet = velClass.planetVehicleArray[sectionNo-1].planet {
+            bool2 = vel.max_distance < planet.distance
         }
-        if sectionNo == 2{
-            if let planet = velClass.selectedPlanet2 {
-                bool2 = vel.max_distance < planet.distance
-            }
-        }
-        if sectionNo == 3{
-            if let planet = velClass.selectedPlanet3 {
-                bool2 = vel.max_distance < planet.distance
-            }
-        }
-        if sectionNo == 4{
-            if let planet = velClass.selectedPlanet4 {
-                bool2 = vel.max_distance < planet.distance
-            }
-        }
+        
         let bool = bool1 || bool2
         return bool
     }
     var body: some View {
         NavigationView{
             VStack(alignment: .leading){
-                
-                        RadioButtonField(
-                            id: velocities[0].name,
-                            label: velocities[0].name,
-                            totalNo: velocities[0].total_no,
-                            color:.red,
-                            bgColor: .black,
-                            
-                            isMarked: velClass.getVehicleNameValue(sectionNo: sectionNo) == velocities[0].name ? true : false,
-                            callback: { selected in
-                                if velClass.getVehicleNameValue(sectionNo: sectionNo) == selected{
-                                    return
-                                }
-                                velClass.setVehicleNameValue(sectionNo: sectionNo, value: selected)
-                               velocities[0].total_no -= 1
-                                if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[1].name{
-                                    velClass.didChangeIn(vel: velocities[0], oldVel: velocities[1], sectionNo: sectionNo)
-                                }
-                                else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[2].name{
-                                    velClass.didChangeIn(vel: velocities[0], oldVel: velocities[2], sectionNo: sectionNo)
-                                }
-                                else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[3].name{
-                                    velClass.didChangeIn(vel: velocities[0], oldVel: velocities[3], sectionNo: sectionNo)
-                                }
-                                else{
-                                    velClass.didChangeIn(vel: velocities[0], oldVel: nil, sectionNo: sectionNo)
-                                }
-                                velClass.setOldVehicleNameValue(sectionNo: sectionNo, value: velClass.getVehicleNameValue(sectionNo: sectionNo))
-                               
-                                print("Selected Gender is: \(selected)")
+                Spacer()
+                ForEach((0...(velocities.count-1)), id: \.self) { indx in
+                     
+                    RadioButtonField(
+                        id: velocities[indx].name,
+                        label: velocities[indx].name,
+                        totalNo: velocities[indx].total_no,
+                        color:.red,
+                        bgColor: .black,
+                        
+                        isMarked: velClass.getVehicleNameValue(sectionNo: sectionNo) == velocities[indx].name ? true : false,
+                        callback: { selected in
+                            if velClass.getVehicleNameValue(sectionNo: sectionNo) == selected{
+                                return
                             }
-                        )
-                        
-                        .disabled(getOptionButtonVisibility(vel: velocities[0]) )
+                            velocities[indx].total_no -= 1
+                            var found = true
+                            for j in 0...(velocities.count-1){
+                                if j != indx{
+                                    if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[j].name{
+                                       
+                                        velClass.didChangeIn(vel: velocities[indx],  sectionNo: sectionNo)
+                                        found = false
+                                    }
+                                }
+                            }
+                            if found == true{
+                                velClass.didChangeIn(vel: velocities[indx],  sectionNo: sectionNo)
+                            }
+                           
+                            print("Selected Vehicle is: \(selected)")
+                        }
+                    )
+                    .disabled(getOptionButtonVisibility(vel: velocities[indx]) )
+                    }
                 
-                        
-                RadioButtonField(
-                    id: velocities[1].name,
-                    label: velocities[1].name,
-                    totalNo: velocities[1].total_no,
-                    color:.red,
-                    bgColor: .black,
-                    isMarked: velClass.getVehicleNameValue(sectionNo: sectionNo) == velocities[1].name ? true : false,
-                    callback: { selected in
-                        if velClass.getVehicleNameValue(sectionNo: sectionNo) == selected{
-                            return
-                        }
-                        velClass.setVehicleNameValue(sectionNo: sectionNo, value: selected)
-                      
-                        velocities[1].total_no -= 1
-                        if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[0].name{
-                            velClass.didChangeIn(vel: velocities[1], oldVel: velocities[0], sectionNo: sectionNo)
-                        }
-                        else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[2].name{
-                            velClass.didChangeIn(vel: velocities[1], oldVel: velocities[2], sectionNo: sectionNo)
-                        }
-                        else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[3].name{
-                            velClass.didChangeIn(vel: velocities[1], oldVel: velocities[3], sectionNo: sectionNo)
-                        }
-                        else{
-                            velClass.didChangeIn(vel: velocities[1], oldVel: nil, sectionNo: sectionNo)
-                        }
-                        velClass.setOldVehicleNameValue(sectionNo: sectionNo, value: velClass.getVehicleNameValue(sectionNo: sectionNo))
-                       
-                       
-                       
-                        print("Selected Gender is: \(selected)")
-                    }
-                )
-                .disabled(getOptionButtonVisibility(vel: velocities[1]))
-                RadioButtonField(
-                    id: velocities[2].name,
-                    label: velocities[2].name,
-                    totalNo: velocities[2].total_no,
-                    color:.red,
-                    bgColor: .black,
-                    isMarked: velClass.getVehicleNameValue(sectionNo: sectionNo) == velocities[2].name ? true : false,
-                    callback: { selected in
-                        if velClass.getVehicleNameValue(sectionNo: sectionNo) == selected{
-                            return
-                        }
-                        velClass.setVehicleNameValue(sectionNo: sectionNo, value: selected)
-                       
-                        velocities[2].total_no -= 1
-                        if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[0].name{
-                            velClass.didChangeIn(vel: velocities[2], oldVel: velocities[0], sectionNo: sectionNo)
-                        }
-                        else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[1].name{
-                            velClass.didChangeIn(vel: velocities[2], oldVel: velocities[1], sectionNo: sectionNo)
-                        }
-                        else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[3].name{
-                            velClass.didChangeIn(vel: velocities[2], oldVel: velocities[3], sectionNo: sectionNo)
-                        }
-                        else{
-                            velClass.didChangeIn(vel: velocities[2], oldVel: nil, sectionNo: sectionNo)
-                        }
-                        
-                        velClass.setOldVehicleNameValue(sectionNo: sectionNo, value: velClass.getVehicleNameValue(sectionNo: sectionNo))
-                       
-                       
-                        print("Selected Gender is: \(selected)")
-                    }
-                )
-                .disabled(getOptionButtonVisibility(vel: velocities[2]))
-        RadioButtonField(
-            id: velocities[3].name,
-            label: velocities[3].name,
-            totalNo: velocities[3].total_no,
-            color:.red,
-            bgColor: .black,
-            isMarked: velClass.getVehicleNameValue(sectionNo: sectionNo) == velocities[3].name ? true : false,
-            callback: { selected in
-                if velClass.getVehicleNameValue(sectionNo: sectionNo) == selected{
-                    return
-                }
-                velClass.setVehicleNameValue(sectionNo: sectionNo, value: selected)
-               
-                velocities[3].total_no -= 1
-                if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[0].name{
-                    velClass.didChangeIn(vel: velocities[3], oldVel: velocities[0], sectionNo: sectionNo)
-                }
-                else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[1].name{
-                    velClass.didChangeIn(vel: velocities[3], oldVel: velocities[1], sectionNo: sectionNo)
-                }
-                else if velClass.getOldVehicleNameValue(sectionNo: sectionNo) == velocities[2].name{
-                    velClass.didChangeIn(vel: velocities[3], oldVel: velocities[2], sectionNo: sectionNo)
-                }
-                else{
-                    velClass.didChangeIn(vel: velocities[3], oldVel: nil, sectionNo: sectionNo)
-                }
-                velClass.setOldVehicleNameValue(sectionNo: sectionNo, value: velClass.getVehicleNameValue(sectionNo: sectionNo))
-               
-                print("Selected Gender is: \(selected)")
-            }
-        )
-        
-        .disabled(getOptionButtonVisibility(vel: velocities[3]))
                
                Spacer()
             }
